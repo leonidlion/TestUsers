@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="user"
+            type="com.dev.leo.testusers.data.models.Result"/>
+
+        <import type="com.dev.leo.testusers.utils.StringUtils"/>
+    </data>
+
+    <LinearLayout
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            tools:src="@mipmap/ic_launcher"
+            android:contentDescription="@null"
+            app:imageUrl="@{user.picture.large}"
+            app:errorImage="@{@drawable/ic_launcher_background}"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_marginStart="8dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:padding="8dp"
+                android:textSize="24sp"
+                android:text="@{String.format(@string/names, user.name.first, user.name.last)}"
+                tools:text="FirstName LastName"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="@{String.format(@string/birth, StringUtils.getDateString(user.dob.date))}"
+                tools:text="@string/birth"
+                style="@style/UserDetailText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="@{String.format(@string/gender, user.gender)}"
+                tools:text="@string/gender"
+                style="@style/UserDetailText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="@{String.format(@string/location, user.location.city, user.location.street)}"
+                tools:text="@string/location"
+                style="@style/UserDetailText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="@{String.format(@string/email, user.email)}"
+                tools:text="@string/email"
+                style="@style/UserDetailText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">TestUsers</string>
+    <string name="names">%1$s %2$s</string>
+    <string name="age">Age: %s</string>
+    <string name="enter_seed">Enter seed</string>
+    <string name="search">Search…</string>
+    <string name="current_seed">Current seed: %s</string>
+    <string name="apply">Apply</string>
+
+    <string name="birth">Birth: %s</string>
+    <string name="gender">Gender: %s</string>
+    <string name="location">Location: %1$s, %2$s</string>
+    <string name="email">Email: %s</string>
+    <string name="clear">Clear</string>
+</resources>
